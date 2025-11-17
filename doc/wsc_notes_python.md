@@ -1,7 +1,7 @@
 # Notes on Python
 This is my notebook of doing some python examples using popular packages for numeric calculations, scientific examples and data plotting
 
-Werner Schoegler, 3-Nov-2025
+Werner Schoegler, 17-Nov-2025
 
 # Installed python version and packages
 I have installed python version 3.14 with addition of following packages
@@ -17,8 +17,9 @@ Install directories are added to the $PATH variable.
 - C:\users\werne\appdata\roaming\python\python314\Scripts
 - C:\users\werne\appdata\roaming\python\python314\site-packages
 
-The git repository, where all my examples are available, is 
-- https://github.com/wesc111/devel_wsc_private
+The git repository, where my python examples are available, is 
+- https://github.com/wesc111/devel_wsc_py
+
 Previously, the python examples were located inside
 - C:\Users\werne\OneDrive\devel_werner_2025\python
 
