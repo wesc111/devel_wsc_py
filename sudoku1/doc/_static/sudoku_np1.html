@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module sudoku_np1</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">sudoku_np1</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/werner/Documents/devel_mac/projects_git/sudoku_numpy/sudoku_np1.py">/Users/werner/Documents/devel_mac/projects_git/sudoku_numpy/sudoku_np1.py</a></td></tr></table>
+    <p><span class="code"><a href="#sudoku_np1">sudoku_np1</a>&nbsp;sudoku&nbsp;class<br>
+A&nbsp;class&nbsp;implementing&nbsp;algorithms&nbsp;based&nbsp;on&nbsp;algorithms&nbsp;used&nbsp;by&nbsp;humans&nbsp;to&nbsp;solve&nbsp;SUDOKUs<br>
+Version&nbsp;0.11,&nbsp;WSC,&nbsp;3-Jan-2025</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"><a href="random.html">random</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="sudoku_np1.html#sudoku_np1">sudoku_np1</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="sudoku_np1">class <strong>sudoku_np1</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">python&nbsp;class&nbsp;to&nbsp;solve&nbsp;SUDOKUs&nbsp;in&nbsp;a&nbsp;human&nbsp;way&nbsp;(without&nbsp;backtracking)<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="sudoku_np1-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-blockIndexList"><strong>blockIndexList</strong></a>(self, block)</dt><dd><span class="code">return&nbsp;a&nbsp;list&nbsp;of&nbsp;row,col&nbsp;indices&nbsp;for&nbsp;a&nbsp;block&nbsp;number</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-calcAllCandidateList"><strong>calcAllCandidateList</strong></a>(self)</dt><dd><span class="code">central&nbsp;calculation&nbsp;of&nbsp;the&nbsp;self.<strong>allCandidateList</strong></span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-calcCandidateList"><strong>calcCandidateList</strong></a>(self, row, col)</dt><dd><span class="code">calculate&nbsp;the&nbsp;candidate&nbsp;list&nbsp;for&nbsp;specific&nbsp;cell&nbsp;at&nbsp;row,&nbsp;col</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-checkDuplicates"><strong>checkDuplicates</strong></a>(self, ll)</dt><dd><span class="code">check&nbsp;if&nbsp;there&nbsp;are&nbsp;duplicates&nbsp;in&nbsp;the&nbsp;list&nbsp;ll</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-checkSolved"><strong>checkSolved</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-checkSudokuIsSolved"><strong>checkSudokuIsSolved</strong></a>(self)</dt><dd><span class="code">check&nbsp;that&nbsp;SUDOKU&nbsp;is&nbsp;valid&nbsp;and&nbsp;no&nbsp;element&nbsp;is&nbsp;0&nbsp;(unsolved)</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-checkSudokuIsValid"><strong>checkSudokuIsValid</strong></a>(self, printFlag=False)</dt><dd><span class="code">check&nbsp;if&nbsp;the&nbsp;actual&nbsp;sudoku&nbsp;is&nbsp;valid&nbsp;by&nbsp;checking&nbsp;all&nbsp;rows,&nbsp;columns&nbsp;and&nbsp;blocks&nbsp;of&nbsp;SUDOKU<br>
+for&nbsp;values&nbsp;1&nbsp;to&nbsp;9&nbsp;(each&nbsp;one&nbsp;shall&nbsp;exist&nbsp;exactly&nbsp;one&nbsp;time)</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-checkValidHouse"><strong>checkValidHouse</strong></a>(self, houseList)</dt><dd><span class="code">check&nbsp;if&nbsp;the&nbsp;house&nbsp;list&nbsp;is&nbsp;valid&nbsp;(each&nbsp;value&nbsp;from&nbsp;1&nbsp;to&nbsp;9&nbsp;shall&nbsp;be&nbsp;exactly&nbsp;one&nbsp;time&nbsp;within&nbsp;the&nbsp;list)</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-colIndexList"><strong>colIndexList</strong></a>(self, col)</dt><dd><span class="code">return&nbsp;a&nbsp;list&nbsp;of&nbsp;indices&nbsp;for&nbsp;a&nbsp;column</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-doAGuess"><strong>doAGuess</strong></a>(self, debug=False)</dt><dd><span class="code">doAGuess:&nbsp;first&nbsp;trial&nbsp;implementation,&nbsp;works&nbsp;not&nbsp;bad,&nbsp;but&nbsp;can&nbsp;be&nbsp;improved&nbsp;a&nbsp;lot&nbsp;(TBD)<br>
+return&nbsp;value:&nbsp;True&nbsp;if&nbsp;guess&nbsp;is&nbsp;done,&nbsp;false&nbsp;means&nbsp;no&nbsp;guess&nbsp;was&nbsp;found</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-findLonePairs"><strong>findLonePairs</strong></a>(self)</dt><dd><span class="code">find&nbsp;lone&nbsp;pairs:&nbsp;pairs&nbsp;within&nbsp;a&nbsp;row,&nbsp;col&nbsp;or&nbsp;block&nbsp;means&nbsp;that&nbsp;these&nbsp;can&nbsp;be&nbsp;removed&nbsp;in&nbsp;the&nbsp;candidate&nbsp;lists&nbsp;of&nbsp;the&nbsp;corresponding&nbsp;house<br>
+TBD,&nbsp;not&nbsp;finished&nbsp;now<br>
+i=0...row,&nbsp;1...col,&nbsp;2...block</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-findSingle"><strong>findSingle</strong></a>(self, cc)</dt><dd><span class="code">find&nbsp;singles&nbsp;in&nbsp;the&nbsp;input&nbsp;list&nbsp;cc</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-getBlockNum"><strong>getBlockNum</strong></a>(self, row, col)</dt><dd><span class="code">get&nbsp;the&nbsp;block&nbsp;number&nbsp;of&nbsp;element&nbsp;defined&nbsp;by&nbsp;row,&nbsp;col</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-getCandidateList"><strong>getCandidateList</strong></a>(self, row, col)</dt><dd><span class="code">get&nbsp;the&nbsp;candidates&nbsp;of&nbsp;specific&nbsp;row,&nbsp;col</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-getSuArray"><strong>getSuArray</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-getValListInBlock"><strong>getValListInBlock</strong></a>(self, blocknum)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-getValListInCol"><strong>getValListInCol</strong></a>(self, num)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-getValListInRow"><strong>getValListInRow</strong></a>(self, num)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-numDoubleCandidates"><strong>numDoubleCandidates</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-print"><strong>print</strong></a>(self, printType=0)</dt><dd><span class="code">print&nbsp;the&nbsp;sudoku&nbsp;array<br>
+rstFlag&nbsp;...&nbsp;if&nbsp;true,&nbsp;print&nbsp;table&nbsp;in&nbsp;restructed&nbsp;text&nbsp;format<br>
+printType&nbsp;...&nbsp;0:&nbsp;simple&nbsp;output,&nbsp;1:&nbsp;RST&nbsp;format,&nbsp;2:&nbsp;RST&nbsp;format&nbsp;with&nbsp;candidates</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-printAllCandidateList"><strong>printAllCandidateList</strong></a>(self)</dt><dd><span class="code">print&nbsp;the&nbsp;actual&nbsp;list&nbsp;of&nbsp;all&nbsp;candidates<br>
+note&nbsp;that&nbsp;the&nbsp;candidates&nbsp;need&nbsp;to&nbsp;be&nbsp;calculated&nbsp;before,&nbsp;eg&nbsp;with&nbsp;<a href="#sudoku_np1-calcAllCandidateList">calcAllCandidateList</a>()</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-printAllCandidates"><strong>printAllCandidates</strong></a>(self)</dt><dd><span class="code">print&nbsp;all&nbsp;canditates&nbsp;and&nbsp;solution&nbsp;fields&nbsp;of&nbsp;the&nbsp;actual&nbsp;SUDOKU&nbsp;in&nbsp;matrix&nbsp;form</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-printValListInBlock"><strong>printValListInBlock</strong></a>(self, num)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-printValListInCol"><strong>printValListInCol</strong></a>(self, num)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-printValListInRow"><strong>printValListInRow</strong></a>(self, num)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-recall"><strong>recall</strong></a>(self)</dt><dd><span class="code">Restore&nbsp;SUDOKU&nbsp;from&nbsp;buffer&nbsp;suArrayTypeStore</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-rowIndexList"><strong>rowIndexList</strong></a>(self, row)</dt><dd><span class="code">return&nbsp;a&nbsp;list&nbsp;of&nbsp;indices&nbsp;for&nbsp;a&nbsp;row</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-setComment"><strong>setComment</strong></a>(self, string)</dt><dd><span class="code">Set&nbsp;comment&nbsp;string&nbsp;for&nbsp;actual&nbsp;SUDOKU</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-setHiddenSingles"><strong>setHiddenSingles</strong></a>(self, type, num, singleList)</dt><dd><span class="code">type:&nbsp;row=0,&nbsp;col=1,&nbsp;block=2<br>
+num&nbsp;...&nbsp;row/block/col&nbsp;number&nbsp;(0-8)<br>
+singleList&nbsp;...&nbsp;list&nbsp;of&nbsp;hidden&nbsp;singles&nbsp;(found&nbsp;with&nbsp;findHiddenSingles)</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-setSuArray"><strong>setSuArray</strong></a>(self, suText)</dt><dd><span class="code">Set&nbsp;actual&nbsp;SUDOKU&nbsp;by&nbsp;a&nbsp;string&nbsp;suText</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-solveHiddenSingles"><strong>solveHiddenSingles</strong></a>(self, debug=False)</dt><dd><span class="code">solve&nbsp;hidden&nbsp;singles<br>
+hidden&nbsp;singles&nbsp;are&nbsp;elements&nbsp;that&nbsp;appear&nbsp;just&nbsp;once&nbsp;in&nbsp;a&nbsp;row,&nbsp;col&nbsp;or&nbsp;block&nbsp;list</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-solveSingles"><strong>solveSingles</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="sudoku_np1-solver1"><strong>solver1</strong></a>(self, debug=False)</dt><dd><span class="code">solver&nbsp;algorithm&nbsp;to&nbsp;solve&nbsp;SUDOKU&nbsp;just&nbsp;with&nbsp;"paper&nbsp;&amp;&nbsp;pencil"&nbsp;methods<br>
+return&nbsp;value&nbsp;is&nbsp;True&nbsp;if&nbsp;sudoku&nbsp;is&nbsp;solved</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-solver2"><strong>solver2</strong></a>(self, max_guess_num, debug=False)</dt><dd><span class="code">solver&nbsp;algorithm&nbsp;doing&nbsp;guesses&nbsp;and&nbsp;run&nbsp;solver&nbsp;1&nbsp;with&nbsp;that&nbsp;guess<br>
+return&nbsp;value&nbsp;is&nbsp;True&nbsp;if&nbsp;sudoku&nbsp;is&nbsp;solved&nbsp;+&nbsp;number&nbsp;of&nbsp;guesses</span></dd></dl>
+
+<dl><dt><a name="sudoku_np1-store"><strong>store</strong></a>(self)</dt><dd><span class="code">Store&nbsp;SUDOKU&nbsp;to&nbsp;buffer&nbsp;suArrayTypeStore</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>HOUSE_T_BLOCK</strong> = 2</dl>
+
+<dl><dt><strong>HOUSE_T_COL</strong> = 1</dl>
+
+<dl><dt><strong>HOUSE_T_ROW</strong> = 0</dl>
+
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>USE_RANDOM_SEED</strong> = False</td></tr></table>
+</body></html>
