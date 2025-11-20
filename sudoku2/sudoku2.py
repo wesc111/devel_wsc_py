@@ -21,6 +21,7 @@
 import numpy as np
 from io import StringIO  
 from collections import Counter
+from block import get_block_indices
 
 class Sudoku:
     def __init__(self, grid: np.ndarray):
@@ -55,11 +56,29 @@ class Sudoku:
         """Get the block number (0-8) for a given cell."""
         return (row // 3) * 3 + (col // 3)
     
+    def getBlockNumberJiggsaw(self, row: int, col: int) -> int:
+        """Get the block number (0-8) for a given cell with jiggsaw support."""
+        # TODO: performance: this can be optimized with a precomputed mapping
+        for blockNumber in range(9):
+            block_indices = get_block_indices(blockNumber, "block_norm_index_")
+            if (row, col) in block_indices:
+                return blockNumber
+        raise ValueError(f"Cell ({row}, {col}) not found in any block.")
+    
     def getBlock(self, row: int, col: int) -> np.ndarray:
         """Get the 3x3 block for a given cell."""
         block_row = (row // 3) * 3
         block_col = (col // 3) * 3
         return self.grid[block_row:block_row+3, block_col:block_col+3].flatten()
+    
+    def getBlockJiggsaw(self, row: int, col: int) -> np.ndarray:
+        """Get the 3x3 block for a given cell with jiggsaw support."""
+        block_number = self.getBlockNumberJiggsaw(row, col)
+        block_indices = get_block_indices(block_number, "block_norm_index_")
+        block_values = []
+        for r, c in block_indices:
+            block_values.append(self.grid[r, c])
+        return np.array(block_values)
     
     def getRow(self, row: int) -> np.ndarray:
         """Get a specific row."""

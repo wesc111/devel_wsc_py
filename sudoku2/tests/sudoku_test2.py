@@ -25,7 +25,8 @@ import os
 import time
 # Adjust the path to import sudoku2 module
 home_dir = os.path.expanduser("~")
-python_dir = home_dir + "/OneDrive/devel_wsc_private/python"
+python_dir = home_dir + "/devel_wsc_py/"
+print(f"Adding {python_dir}/sudoku2 to sys.path for imports")
 if python_dir not in sys.path:
     sys.path.append(python_dir + "/sudoku2")  # to allow import from sibling directory
 
